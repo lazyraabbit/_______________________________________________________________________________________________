@@ -344,6 +344,7 @@ body {
   cursor: pointer;
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   margin-left: 8px;
+  white-space: nowrap;
 }
 
 .ai-mode-btn:hover {

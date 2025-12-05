@@ -4,7 +4,7 @@ import { Search, Mic, Home, Plus, Settings, Pen } from 'lucide-react'
 import './index.css'
 
 // Connect to the backend
-const socket = io(import.meta.env.PROD ? undefined : 'http://localhost:3001');
+const socket = io(import.meta.env.VITE_SERVER_URL || 'http://localhost:3001');
 
 function App() {
   const [message, setMessage] = useState("");

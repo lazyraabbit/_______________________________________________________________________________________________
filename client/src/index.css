@@ -5,7 +5,7 @@
 
   color: #e8eaed;
   /* Light Gray Text */
-  background-color: #202124;
+  background-color: #353535;
   /* Dark Background */
 
   font-synthesis: none;
@@ -220,12 +220,12 @@ body {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #303134;
-  /* Or simpler transparent on hover? Google is usually just an icon or pill */
+  background-color: #202124;
+  /* Darker background */
   /* The user image shows a pill with text "Customize Chrome" */
   border-radius: 100px;
   /* pill shape */
-  padding: 8px 16px;
+  padding: 6px 12px;
   /* text padding */
   display: flex;
   align-items: center;

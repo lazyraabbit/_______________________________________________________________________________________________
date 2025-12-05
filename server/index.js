@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use(express.static(path.join(__dirname, '../client/dist')));
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -40,10 +40,9 @@ io.on('connection', (socket) => {
     });
 });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+// Simple root route to check if server is running
+app.get('/', (req, res) => {
+    res.send('Chrome Chat Server is running');
 });
 
 const PORT = 3001;

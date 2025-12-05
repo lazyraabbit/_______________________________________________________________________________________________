@@ -1,0 +1,367 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #e8eaed;
+  /* Light Gray Text */
+  background-color: #202124;
+  /* Dark Background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo-container {
+  margin-bottom: 38px;
+}
+
+.logo-text {
+  font-size: 88px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+/* Logo colors remain mostly the same, maybe slightly tweaked for dark mode if needed, 
+   but standard Google logo usually sits on white. 
+   On Dark mode, they often just use white text "Google" or the colored letters are fine. 
+   Let's keep colored letters standard. */
+.logo-g {
+  color: #4285F4;
+}
+
+.logo-r {
+  color: #EA4335;
+}
+
+.logo-o {
+  color: #FBBC05;
+}
+
+.logo-b {
+  color: #4285F4;
+}
+
+.logo-l {
+  color: #34A853;
+}
+
+.logo-e {
+  color: #EA4335;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 584px;
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #303134;
+  /* Dark Search Bar */
+  border: 1px solid #5f6368;
+  box-shadow: none;
+  border-radius: 24px;
+  z-index: 3;
+  height: 44px;
+  margin: 0 auto;
+  width: auto;
+  padding: 5px 8px 0 14px;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+  background-color: #303134;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+  border-color: rgba(223, 225, 229, 0);
+  /* Or keep subtle border */
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #e8eaed;
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  -webkit-tap-highlight-color: transparent;
+  height: 34px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.icon {
+  color: #9aa0a6;
+  cursor: pointer;
+}
+
+/* Chat Area Styling */
+.messages-container {
+  position: fixed;
+  bottom: 80px;
+  /* Above the button */
+  right: 20px;
+  width: 320px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.messages-area {
+  background: #303134;
+  border: 1px solid #5f6368;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 85%;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.message-mine {
+  background-color: #8ab4f8;
+  /* Light Blue for dark mode */
+  color: #202124;
+  align-self: flex-end;
+}
+
+.message-other {
+  background-color: #3c4043;
+  /* Dark Gray */
+  color: #e8eaed;
+  align-self: flex-start;
+}
+
+/* Shortcuts */
+.shortcuts {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  justify-content: center;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.shortcut:hover {
+  background-color: #303134;
+}
+
+.shortcut-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #303134;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortcut-title {
+  font-size: 13px;
+  color: #e8eaed;
+}
+
+/* Customize Button */
+.customize-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #303134;
+  /* Or simpler transparent on hover? Google is usually just an icon or pill */
+  /* The user image shows a pill with text "Customize Chrome" */
+  border-radius: 100px;
+  /* pill shape */
+  padding: 8px 16px;
+  /* text padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #e8eaed;
+  transition: background-color 0.2s;
+  /* Ensure it looks like the screenshot - dark grey pill */
+}
+
+.customize-btn:hover {
+  background-color: #3c4043;
+  /* Slightly lighter on hover */
+}
+
+
+/* Main Layout Improvements */
+#root {
+  justify-content: flex-start;
+  /* Align closer to top like real Chrome */
+  padding-top: 130px;
+  /* Approximate spacing */
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-link {
+  color: #e8eaed;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Roboto, arial, sans-serif;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.header-icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-icon-container:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  fill: #e8eaed;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #8ab4f8;
+  /* Use a default color */
+  color: #202124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Search Bar refinements */
+.search-container {
+  margin-top: -12px;
+  margin-bottom: 26px;
+}
+
+.search-bar {
+  background: #ffffff;
+  border-radius: 24px;
+  height: 48px;
+  width: 580px;
+  max-width: 90vw;
+  padding: 0 14px;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+  background-color: #ffffff;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+}
+
+.search-right-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-right: 0;
+}
+
+.ai-mode-btn {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  margin-left: 8px;
+}
+
+.ai-mode-btn:hover {
+  background-color: #e3e3e3;
+}
+
+/* Shortcuts refinements */
+.shortcuts {
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.shortcut {
+  padding: 8px;
+  width: 112px;
+  border-radius: 8px;
+}
+
+.shortcut:hover {
+  background-color: #35363a;
+}
